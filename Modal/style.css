@@ -1,0 +1,88 @@
+.btn{
+    padding: 25px;
+    display: inline;
+    background-color: blue;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.btn:hover{
+    background-color: #09C5FF;
+  }
+  
+  .janela-modal{
+    width: 100vw;
+    height: 120vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(4, 20, 20, 0.432);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  h1{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  img{
+    width: 110%;
+  }
+
+  p{
+    color: rgb(67, 75, 83);
+  }
+  .modal{
+    width: 20%;
+    min-width: 230px;
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.582);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+  }
+
+  .fechar{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .janela-modal.abrir{
+    display: flex;
+  }
+
+  @keyframes abrirmodal{
+    from{
+        opacity: 0;
+        transform: translate3d(-20px, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+  }
+
+  .abrir .modal{
+    animation: abrirmodal 0.2s;
+  }

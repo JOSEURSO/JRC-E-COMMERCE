@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<title>JRC INFORMÁTICA</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+ }
+
+  .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+  }
+
+  .container .card{
+    width: 300px;
+    height: 450px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    background-color: aqua;
+  }
+
+  .container .card h2{
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    transform-style: preserve-3d;
+  }
+
+  .container .card img.produto{
+    max-width: 250px;
+    transform-style: preserve-3d;
+    transition: .5s;
+  }
+
+  .container .card:hover img.produto, .container .card:hover button{
+    transform: translate3d(0,0,100px);
+  }
+
+  .container .card button{
+    padding: 10px 40px;
+    background-color: blue;
+    border: 0;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .5s;
+  }
+
+  .container div.card1{
+    background-image: linear-gradient(45deg, #003cff, #00f7ff);
+  }
+
+  .container div.card2{
+    background-image: linear-gradient(45deg, #003cff, #00f7ff);
+  }
+
+ 
+ 
+ ul{
+    list-style-type: none;
+    display: flex;
+    position: relative;
+    gap: 40px;
+ }
+
+ ul li{
+    width: 35px;
+    height: 35px;
+    background-color: blue;
+    box-shadow: 0 8px 25px #00000065;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: .2s;
+ }
+
+ ul li .icon{
+    color: #ccc;
+    font-size: 2.2em;
+    transform: .2s;
+ }
+
+ ul li .text{
+    color: #ffffff;
+    font-size: 20px;
+    transform: scale(0);
+    transition: .2s;
+    transition-delay: .1s;
+    
+ }
+
+ ul li:hover{
+    width: 180px;
+ }
+
+ ul li span{
+    position: absolute;
+ }
+
+ ul li:hover .text{
+    transform: scale(1);
+ }
+
+ ul li:hover .icon{
+    transform: scale(0);
+ }
+
+ ul li::before{
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: 60px;
+ }
+
+ ul li:hover::before{
+    opacity: 1;
+ }
+
+ h1{
+   font-size: 18px;
+   color: black;
+   font-weight: 600;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+ }
+
+ h2{
+   color: slategrey;
+   font-size: 15px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   font-weight: 500;
+ }
+
+ h3{
+   color: red;
+   text-align: center;
+   justify-content: center;
+ }
+
+ button{
+   width: 30%;
+   height: 5%;
+   margin-left: 180px;
+   color: white;
+   font-weight: 600;
+  background-color: black;
+   border-radius: 10%;
+   cursor: pointer;
+
+   
+ }
+
+ dialog{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 500px;
+    background-image: url(./download.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 0;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+dialog div{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+dialog div h1{
+    font-size: 3em;
+    color: red;
+}
+
+dialog div p:nth-of-type(1){
+    font-size: 1.3em;
+
+}
+
+dialog div p:nth-of-type(2){
+    font-size: 13px;
+    
+}
+
+dialog > button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+dialog div button{
+    width: 140px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(82, 255, 47);
+    color: black;
+    font-size: 1em;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.ValorPromo {
+    font-family: Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    color: red;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+sup {
+    font-size: 15px;
+}
+
+
+
+</style>
+</head>
+<body>
+   
+    <section class="group_scrollingBanner">
+      <div class="first_column">
+         <h2 class="phrase">JRC INFORMÁTICA</h2>
+      </div>
+      <div class="second_column">
+        <h2 class="phrase">JRC INFORMÁTICA</h2>
+      </div>
+    
+    </section>  
+
+    <button id="abrir">ABRIR</button>
+    
+    <dialog>
+
+       <button>X</button> 
+
+        <div>
+            <p>APENAS HOJE</p>
+            <h1>$400.00</h1>
+            <p>Computador basico Completo</p>
+           <a href="https://api.whatsapp.com/send?phone=5517992853648&text=Ol%C3%A1%20no%20que%20posso%20te%20ajudar?" target="_blank"><button>EU QUERO</button></a>
+        </div>
+    </dialog>
+
+    <br>
+   <br>
+
+
+                    
+        <ul>
+     
+          <a href="https://www.instagram.com/jrcinformatica2024/" target="_blank">
+          <li style="--cor1: #FB3997; --cor2: #FECF12;">
+            <span class="icon"><i class="bi bi-instagram"></i></span>
+            <span class="text">@jrcinformatica2024</span>
+          </li>
+        </a>    
+        <a href="https://www.facebook.com/jose.cassela.3/" target="_blank">
+            <li style="--cor1: #09C5FF; --cor2: #0986ff;">
+              <span class="icon"><i class="bi bi-facebook"></i></i></span>
+              <span class="text">jose.formatopc@hotmail.com</span>
+            </li>
+          </a>  
+          <a href="https://api.whatsapp.com/send?phone=5517992853648&text=Ol%C3%A1%20no%20que%20posso%20te%20ajudar?" target="_blank">
+            <li style="--cor1: #43FE84; --cor2: #2DBC5D;">
+              <span class="icon"><i class="bi bi-whatsapp"></i></i></span>
+              <span class="text">1799285-3648</span>
+            </li>
+          </a>  
+          <a href="https://joseurso.github.io/PORTIFOLIO/" target="_blank">
+            <li style="--cor1: #ffffff; --cor2: #0986ff;">
+              <span class="icon"><i class="bi bi-globe2"></i></i></span>
+              <span class="text">Site</span>
+            </li>
+          </a>          
+        </ul>
+     
+           <br>
+
+
+           <div class="carousel">
+            <div class="carousel_inner">
+               <div class="carousel_item carousel_item__active">
+                  <img src="./dell.jpg" alt="" class="carousel_img">
+                  <div class="carousel_caption">
+                    
+                   
+                  </div>
+               </div>
+               <div class="carousel_item">
+                  <img src="./dell2.jpg" alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src="./dell3.jpg" alt="" class="carousel_img">
+               </div>
+            </div>
+      
+            <div class="carousel_indicator">
+               <button class="carousel_dot carousel_dot__active"></button>
+               <button class="carousel_dot"></button>
+               <button class="carousel_dot"></button>
+            </div>
+      
+            <div class="carousel_control">
+               <button class="carousel_button carousel_button__prev">
+                  <i class="fas fa-chevron-left"></i>
+               </button>
+               <button class="carousel_button carousel_button__next">
+                  <i class="fas fa-chevron-right"></i>
+               </button>
+            </div>
+         </div>
+      
+         <h1>Computador Completo</h1>
+         <h2>Core 2duo 4GB de memória HD/250GB</h2>
+         <a href="./Modal/" target="_blank"><button>Especificações</button></a>
+         <p class="ValorPromo">R$ 650<sup>00</sup></p>
+  
+         <a href="https://api.whatsapp.com/send?phone=5517992853648&text=Ol%C3%A1%20no%20que%20posso%20te%20ajudar?" target="_blank"><button>Comprar</button></a>
+  
+           <br>
+           <br>
+
+
+        <div class="carousel">
+          <div class="carousel_inner">
+             <div class="carousel_item carousel_item__active">
+                <img src="./amd.jpg" alt="" class="carousel_img">
+                <div class="carousel_caption">
+                  
+                 
+                </div>
+             </div>
+             <div class="carousel_item">
+                <img src="./amd1.jpg" alt="" class="carousel_img">
+             </div>
+             <div class="carousel_item">
+                <img src="./amd2.jpg" alt="" class="carousel_img">
+             </div>
+          </div>
+    
+          <div class="carousel_indicator">
+             <button class="carousel_dot carousel_dot__active"></button>
+             <button class="carousel_dot"></button>
+             <button class="carousel_dot"></button>
+          </div>
+    
+          <div class="carousel_control">
+             <button class="carousel_button carousel_button__prev">
+                <i class="fas fa-chevron-left"></i>
+             </button>
+             <button class="carousel_button carousel_button__next">
+                <i class="fas fa-chevron-right"></i>
+             </button>
+          </div>
+       </div>
+    
+       <h1>CPU</h1>
+       <h2>AMD IIX4 8GB de memória HD/500GB SSD/120GB PLACA DE VIDEO GTXTI/1GB</h2>
+       <a href="./CpuAmd/" target="_blank"><button>Especificações</button></a>
+       <p class="ValorPromo">R$ 1.100<sup>00</sup></p>
+
+       <a href="https://api.whatsapp.com/send?phone=5517992853648&text=Ol%C3%A1%20no%20que%20posso%20te%20ajudar?" target="_blank"><button>Comprar</button></a>
+
+         <br>
+         <br>
+
+       <div class="carousel">
+         <div class="carousel_inner">
+            <div class="carousel_item carousel_item__active">
+               <img src="./placa.jpg" alt="" class="carousel_img">
+               <div class="carousel_caption">
+                 
+                
+               </div>
+            </div>
+            <div class="carousel_item">
+               <img src="./placa1.jpg" alt="" class="carousel_img">
+            </div>
+            <div class="carousel_item">
+               <img src="./placa2.jpg" alt="" class="carousel_img">
+            </div>
+         </div>
+   
+         <div class="carousel_indicator">
+            <button class="carousel_dot carousel_dot__active"></button>
+            <button class="carousel_dot"></button>
+            <button class="carousel_dot"></button>
+         </div>
+   
+         <div class="carousel_control">
+            <button class="carousel_button carousel_button__prev">
+               <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel_button carousel_button__next">
+               <i class="fas fa-chevron-right"></i>
+            </button>
+         </div>
+      </div>
+
+
+      
+      
+      <h1>Placa de Video</h1>
+      <h2>GTX550ti/2GB</h2>
+      <a href="./Placavideo/" target="_blank"><button>Especificações</button></a>
+      <p class="ValorPromo">R$ 280<sup>00</sup></p>
+
+      <a href="https://api.whatsapp.com/send?phone=5517992853648&text=Ol%C3%A1%20no%20que%20posso%20te%20ajudar?" target="_blank"><button>Comprar</button></a>
+   
+        
+      <br>
+      <br>
+
+      <div class="carousel">
+         <div class="carousel_inner">
+            <div class="carousel_item carousel_item__active">
+               <img src="./1155.jpg" alt="" class="carousel_img">
+               <div class="carousel_caption">
+                 
+                
+               </div>
+            </div>
+            <div class="carousel_item">
+               <img src="./11551.jpg" alt="" class="carousel_img">
+            </div>
+            <div class="carousel_item">
+               <img src="./11552.jpg" alt="" class="carousel_img">
+            </div>
+         </div>
+   
+         <div class="carousel_indicator">
+            <button class="carousel_dot carousel_dot__active"></button>
+            <button class="carousel_dot"></button>
+            <button class="carousel_dot"></button>
+         </div>
+   
+         <div class="carousel_control">
+            <button class="carousel_button carousel_button__prev">
+               <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel_button carousel_button__next">
+               <i class="fas fa-chevron-right"></i>
+            </button>
+         </div>
+      </div>
+   
+      <h1>CPU</h1>
+      <h2>Placa mãe 3geração 8GB de Memória HD/500GB</h2>
+      <a href="./Computador/" target="_blank"><button>Especificações</button></a>
+      <p class="ValorPromo">R$ 550<sup>00</sup></p>
+
+      <a href="https://api.whatsapp.com/send?phone=5517992853648&text=Ol%C3%A1%20no%20que%20posso%20te%20ajudar?" target="_blank"><button>Comprar</button></a>
+      <br>
+     <br>
+
+ <a href="https://joseurso.github.io/PORTIFOLIO/" target="_blank">Desenvolvido por José ramos</a>
+    
+    
+
+       <script src="./script.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
