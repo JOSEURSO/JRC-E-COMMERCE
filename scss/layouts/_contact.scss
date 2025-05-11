@@ -1,0 +1,68 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+#contact {
+  background-color: variables.$white;
+
+  .wrapper {
+    @include mixins.wrapper;
+    padding: 120px 1.5625rem;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    @include mixins.notebook {
+      flex-direction: column;
+    }
+
+    @include mixins.tablet {
+      padding: 72px 1.5625rem;
+    }
+
+    .contact {
+      &-info {
+        h3 {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: variables.$blue-text-h3;
+          margin-bottom: 36px;
+
+          @include mixins.tablet {
+            font-size: 2rem;
+          }
+        }
+
+        .address,
+        .email {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          color: variables.$blue-700;
+          width: 286px;
+
+          img {
+            width: fit-content;
+          }
+        }
+
+        .address {
+          margin-bottom: 15px;
+        }
+      }
+
+      &-image {
+        @include mixins.tablet {
+          width: 400px;
+        }
+
+        @include mixins.mobile {
+          width: fit-content;
+        }
+      }
+    }
+
+    .btn {
+      margin-top: 35px;
+    }
+  }
+}

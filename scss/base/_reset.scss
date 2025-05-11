@@ -1,0 +1,87 @@
+@use "./variables";
+@use "./mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @include mixins.tablet {
+    scroll-padding-top: 60px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 40px;
+  border: solid 3px transparent;
+  padding: 13px 32px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+  width: fit-content;
+  cursor: pointer;
+  transition: 400ms;
+
+  img {
+    width: 22px;
+    height: 22px;
+    transition: 400ms;
+  }
+}
+
+.btn-reset {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-filled {
+  background-color: variables.$blue-600;
+  color: variables.$white;
+  border-color: variables.$blue-600;
+
+  &:hover {
+    background-color: variables.$white-100;
+    color: variables.$blue-600;
+    border-color: variables.$blue-600;
+    transition: 400ms;
+
+    img {
+      width: 22px;
+      height: 22px;
+      transition: 400ms;
+      filter: invert(32%) sepia(89%) saturate(1061%) hue-rotate(184deg) brightness(65%) contrast(91%);
+    }
+  }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,95 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+#footer {
+  background-color: variables.$blue-600;
+
+  .wrapper {
+    @include mixins.wrapper;
+    padding: 32px 1.5625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixins.mobile {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .top {
+      @include mixins.mobile {
+        text-align: center;
+      }
+
+      img {
+        width: fit-content;
+      }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 22px;
+
+        .copy,
+        .reserved-rights {
+          font-size: 0.875rem;
+          font-weight: 400;
+          color: variables.$blue-100;
+        }
+
+        .develop-by {
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: variables.$blue-100;
+
+          a {
+            color: variables.$black;
+            margin-left: 8px;
+
+            .develop-by-name {
+              color: variables.$white-200;
+            }
+
+            &:hover {
+              transition: 400ms;
+              filter: brightness(80%);
+            }
+          }
+        }
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 30px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        transition: 400ms;
+
+        &:hover {
+          transition: 400ms;
+          filter: brightness(80%);
+        }
+      }
+    }
+  }
+}
+
+.back-to-top {
+  visibility: hidden;
+  position: fixed;
+  width: 45px;
+  bottom: 17px;
+  right: 25px;
+  z-index: 1;
+  transition: 450ms;
+
+  &:hover {
+    transition: 450ms;
+    transform: scale(0.9);
+  }
+}

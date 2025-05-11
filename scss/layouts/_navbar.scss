@@ -1,0 +1,91 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+#navbar {
+  background-color: variables.$blue-300;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  .wrapper {
+    @include mixins.wrapper;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+
+    @include mixins.tablet {
+      padding: 22px 25px;
+    }
+
+    .logo {
+      cursor: pointer;
+      width: 12rem;
+      display: flex;
+    }
+
+    .menu {
+      display: flex;
+      gap: 12px;
+
+      @include mixins.tablet {
+        display: none;
+      }
+
+      li a {
+        padding: 8px 12px;
+        font-weight: 500;
+        color: variables.$blue-600;
+        transition: 400ms;
+
+        &:hover {
+          background-color: variables.$blue-600;
+          border-radius: 14px;
+          color: variables.$blue-100;
+          transition: 500ms;
+        }
+      }
+    }
+
+    .active {
+      display: flex;
+      gap: 32px;
+      position: absolute;
+      background: variables.$blue-600;
+      right: 0;
+      top: 0;
+      height: 362px;
+      width: 282px;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 71px;
+      border-radius: 8px 0 8px 8px;
+
+      li a {
+        color: variables.$blue-100;
+      }
+    }
+
+    .menu-btn {
+      background-image: url(../../assets/menu-mobile.svg);
+    }
+
+    .close-btn {
+      background-image: url(../../assets/close-menu-mobile.svg);
+      z-index: 1;
+    }
+
+    .btn-reset {
+      display: none;
+      height: 18px;
+      width: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include mixins.tablet {
+        display: flex;
+      }
+    }
+  }
+}

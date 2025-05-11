@@ -1,0 +1,66 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+#testimonial {
+  background-color: variables.$white;
+
+  .wrapper {
+    @include mixins.wrapperSection;
+    padding-bottom: 0;
+
+    .swiper {
+      padding-bottom: 55px;
+
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: variables.$blue-100;
+        border-radius: 16px;
+        padding: 32px;
+        height: 420px;
+        border: solid 2px transparent;
+        transition: border 400ms;
+
+        @include mixins.mobile {
+          height: fit-content;
+          min-height: 460px;
+        }
+
+        &:hover {
+          border-color: variables.$blue-600;
+        }
+
+        &-image {
+          width: 130px;
+          height: 130px;
+          border-radius: 65px;
+          border: solid 8px variables.$blue-600;
+          margin-bottom: 10px;
+        }
+
+        &-title {
+          font-size: 1rem;
+          font-weight: 700;
+          color: variables.$blue-600;
+        }
+
+        &-description {
+          font-size: 1rem;
+          font-weight: 400;
+          color: variables.$blue-card-text;
+          margin-top: 20px;
+          line-height: 150%;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      top: 450px !important;
+
+      @include mixins.mobile {
+        top: 470px !important;
+      }
+    }
+  }
+}

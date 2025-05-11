@@ -1,0 +1,90 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+#header {
+  background-color: variables.$blue-300;
+
+  .wrapper {
+    @include mixins.wrapper;
+    display: flex;
+    justify-content: space-between;
+    padding: 149.54px 1.5625rem 120px 1.5625rem;
+
+    @include mixins.notebook {
+      flex-direction: column;
+      align-items: center;
+      gap: 96px;
+    }
+
+    @include mixins.tablet {
+      gap: 50px;
+    }
+
+    .header-content {
+      width: 57%;
+
+      @include mixins.notebook {
+        width: fit-content;
+      }
+
+      @include mixins.mobile {
+        text-align: center;
+      }
+
+      &-message {
+        color: variables.$blue-600;
+        font-size: 0.9375rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        @include mixins.tablet {
+          font-size: 0.875rem;
+        }
+      }
+
+      &-title {
+        color: variables.$blue-text-h3;
+        font-size: 3rem;
+        font-weight: 700;
+
+        @include mixins.tablet {
+          font-size: 2rem;
+        }
+      }
+
+      &-description {
+        color: variables.$blue-700;
+        font-size: 1.125rem;
+        font-weight: 400;
+        margin: 47px 0 52px 0;
+
+        @include mixins.tablet {
+          font-size: 1rem;
+          margin: 32px 0 28px 0;
+        }
+      }
+
+      a {
+        @include mixins.mobile {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .header-image {
+      width: 460px;
+
+      @include mixins.notebook {
+        width: fit-content;
+      }
+
+      @include mixins.tablet {
+        width: 25rem;
+      }
+
+      @include mixins.mobile {
+        width: fit-content;
+      }
+    }
+  }
+}

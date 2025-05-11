@@ -1,0 +1,83 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+.container {
+  background-color: variables.$blue-600;
+  padding: 68px 105px;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 140px;
+
+  @include mixins.notebook {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  @include mixins.tablet {
+    padding: 50px 50px;
+    margin-top: 60px;
+    top: 0;
+  }
+
+  @include mixins.mobile {
+    text-align: center;
+    padding: 30px 16px;
+  }
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.09;
+    background-image: url("../../assets/placa-circuito.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+  &-description {
+    font-size: 2rem;
+    font-weight: 700;
+    width: 54%;
+    color: variables.$white;
+
+    @include mixins.notebook {
+      width: fit-content;
+    }
+
+    @include mixins.tablet {
+      font-size: 1.25rem;
+    }
+  }
+
+  .btn-filled-white {
+    background-color: variables.$white;
+    color: variables.$blue-600;
+    z-index: 1;
+
+    @include mixins.mobile {
+      gap: 8px;
+      width: max-content;
+      padding: 13px 18px;
+    }
+
+    &:hover {
+      background-color: variables.$blue-600;
+      color: variables.$white;
+      border-color: variables.$white;
+
+      img {
+        transition: 400ms;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(200%) contrast(102%);
+      }
+    }
+  }
+}

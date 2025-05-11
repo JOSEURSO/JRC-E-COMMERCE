@@ -1,0 +1,193 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+#services {
+  background-color: variables.$white-300;
+
+  .wrapper {
+    @include mixins.wrapperSection;
+
+    .tip {
+      margin-top: 10px;
+      display: block;
+      font-size: 0.875rem;
+      color: variables.$blue-card-text;
+
+      @include mixins.tablet {
+        font-size: 0;
+
+        &::before {
+          content: "toque nos cards para saber mais";
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .cards {
+      &-services,
+      &-devices {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &-card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          img {
+            width: fit-content;
+          }
+        }
+      }
+
+      &-services {
+        margin-bottom: 85px;
+        gap: 25px;
+
+        &-card {
+          width: 140px;
+          height: 140px;
+          text-align: center;
+          position: relative;
+          border-radius: 16px;
+          cursor: pointer;
+          perspective: 300px;
+
+          &:hover .flip {
+            transform: rotateY(180deg);
+          }
+
+          .flip {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+
+            .front,
+            .back {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              border-radius: 16px;
+              position: absolute;
+              backface-visibility: hidden;
+              background-color: variables.$blue-600;
+            }
+
+            .front {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 14px;
+              gap: 10px;
+
+              p {
+                font-size: 1rem;
+                font-weight: 700;
+                color: variables.$blue-100;
+              }
+            }
+
+            .back {
+              transform: rotateY(180deg);
+
+              p {
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: variables.$blue-100;
+                padding: 7px;
+
+                span {
+                  display: block;
+                  margin-top: 5px;
+                  font-size: 0.75rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-devices {
+        gap: 50px;
+
+        &-card {
+          gap: 20px;
+          border-radius: 8px;
+          width: 220px;
+          height: 200px;
+          padding: 32px;
+          transition: 450ms;
+          background-color: variables.$blue-600;
+
+          &:hover {
+            transition: 450ms;
+            transform: scale(1.05);
+          }
+
+          h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: variables.$white-200;
+          }
+        }
+      }
+    }
+
+    .services-cards {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+
+      @include mixins.tablet {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    .brands-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-description {
+        text-align: center;
+        font-size: 1.25rem;
+        width: 48.125rem;
+        font-weight: 700;
+        color: variables.$black;
+        margin: 100px 0 60px 0;
+
+        @include mixins.notebook {
+          width: fit-content;
+        }
+      }
+
+      .brands {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px 50px;
+        width: 43.75rem;
+
+        @include mixins.tablet {
+          width: fit-content;
+        }
+
+        img {
+          width: fit-content;
+          transition: 450ms;
+
+          &:hover {
+            transition: 450ms;
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+}
